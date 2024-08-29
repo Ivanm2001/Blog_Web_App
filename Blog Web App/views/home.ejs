@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Title</title>
+    <link rel="stylesheet" href="styles/home.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Blog App</h1>
+    </header>
+    <div class="caja-crear-post">
+      <div class="crear-post">
+        <form action="/submit" class="formulario" method="POST">
+          <textarea
+            placeholder="Cuentanos que esta en tu mente!"
+            name="blog-post"
+          ></textarea>
+          <input type="submit" value="Publicar" method="POST" />
+        </form>
+      </div>
+    </div>
+    <% if (locals.posteos.length > 0) { %>
+    <div class="caja-caja-posteos">
+      <div class="caja-posteos">
+        <% for(let i = 0; i < posteos.length; i++) { %>
+        <div class="posteo-ind" data-id="<%= i %>">
+          <p class="posteo-texto"><%= posteos[i] %></p>
+          <div class="posteo-botones" data-id="botones <%= i %>">
+            <form action="/edit" method="POST" class="posteo-form">
+              <input type="hidden" name="id" value="<%= i %>"/>
+              <input type="submit" class="edit-button" value="Editar" />
+            </form>
+            <form action="/delete" method="POST" class="posteo-form">
+              <input type="hidden" name="id" value="<%= i %>"/>
+              <input type="submit" class="delete-button" value="Eliminar" />
+            </form>
+          </div>
+        </div>
+        <% } %>
+      </div>
+    </div>
+    <% } %>
+  </body>
+</html>

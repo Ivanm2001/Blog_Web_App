@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Title</title>
+    <link rel="stylesheet" href="styles/edit.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Blog App</h1>
+    </header>
+    <div class="caja-crear-post">
+        <div class="crear-post">
+          <form action="/edit/send" class="formulario" method="POST">
+            <% let tupla = [locals.numero, locals.posteo] %>
+            <textarea name="posteo"> <%= locals.posteo %> </textarea>
+            <input type="hidden" name="id" value="<%= locals.numero %>"/>
+            <input type="submit" value="Publicar" method="POST" />
+          </form>
+        </div>
+      </div>
+  </body>
+</html>
