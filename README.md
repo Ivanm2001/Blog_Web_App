@@ -1,1 +1,1 @@
-# Blog_Web_App
+El objetivo de este proyecto es crear una aplicación web que sea un blog utilizando Node.js, Express.js y EJS. La aplicación permitirá a los usuarios crear y ver publicaciones en el blog. Las publicaciones no persistirán entre sesiones ya que en esta versión de la aplicación no se utilizará una base de datos. Aunque el estilo HTML y CSS todavía necesita algunos ajustes para mejorar la apariencia, el enfoque principal del proyecto ha sido practicar el uso de protocolos HTTP y trabajar con Node.js.
